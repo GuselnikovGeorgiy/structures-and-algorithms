@@ -1,0 +1,15 @@
+n = int(input("Количество дисков = "))
+A, B, C = [[i for i in range(n,0,-1)], [], []
+
+print(A, B, C)
+
+def hanoi(n, start, tmp, end):
+    if n < 0:
+        return
+    hanoi(n-1, start, end, tmp)
+    if len(start)>0:
+        end.append(start.pop())
+    hanoi(n - 1, tmp, start, end)
+
+hanoi(n, A, B, C)
+print(A, B, C)
